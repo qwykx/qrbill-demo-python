@@ -4,24 +4,26 @@ from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPDF, renderSVG
 
 my_bill = QRBill(
-       account='CH5800791123000889012',
+       account='CH39 0870 4016 0754 7300 7',
        creditor={
-        'name': 'Co4 Aktiengesellschaft',
-        'street': 'Gewerbeweg', 
-        'house_num': '15', 
-        'pcode': '9490', 
-        'city': 'Vaduz', 
+        'name': 'Envis AG',
+        'street': 'Im alten Riet 153', 
+        'house_num': '153', 
+        'pcode': '9494', 
+        'city': 'Schaan', 
         'country': 'LI'
        },
-       amount='22.45',
+       amount='19.43',
        debtor={
-           'name': 'Hans Muster',
-           'street': 'Musterweg',
+           'name': 'Bea Beispiel',
+           'street': 'Bangarten',
            'house_num': '10',
-           'pcode': '9470',
-           'city': 'Buchs',
-           'country': 'CH'
+           'pcode': '9490',
+           'city': 'Vaduz',
+           'country': 'LI'
        },
+       reference_number="RF14 111",
+       additional_information='Stromkostenabrechnung 01.01.2024 - 30.06.2024',
        language='de'
    )
 with tempfile.TemporaryFile(encoding='utf-8', mode='r+') as temp:
