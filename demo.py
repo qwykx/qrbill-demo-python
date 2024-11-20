@@ -26,10 +26,12 @@ my_bill = QRBill(
        additional_information='Stromkostenabrechnung 01.01.2024 - 30.06.2024',
        language='de'
    )
+
 with tempfile.TemporaryFile(encoding='utf-8', mode='r+') as temp:
     my_bill.as_svg(temp)
     temp.seek(0)
     drawing = svg2rlg(temp)
 
+print(renderSVG.drawToString(drawing))
 renderSVG.drawToFile(drawing, "qrbill.svg")
 renderPDF.drawToFile(drawing, "qrbill.pdf")
